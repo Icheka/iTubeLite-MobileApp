@@ -39,9 +39,9 @@ export const GS = StyleSheet.create({
     },
     blockButton: {
         width: width - 80,
-        height: 66,
+        height: 55,
         borderRadius: 6,
-        backgroundColor: 'purple',
+        backgroundColor: 'darkred',
         justifyContent: 'center',
         alignItems: 'center',
     },

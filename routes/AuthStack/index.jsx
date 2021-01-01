@@ -5,12 +5,12 @@ import Signup from '../../screens/Signup';
 import Login from '../../screens/Login';
 
 const screens = {
+    Login: {
+        screen: Login
+    },
     Signup: {
         screen: Signup
     },
-    Login: {
-        screen: Login
-    }
 }
 
 const AuthStack = createStackNavigator(screens);
