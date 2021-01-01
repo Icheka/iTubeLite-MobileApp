@@ -5,10 +5,11 @@ import {
     Keyboard, TouchableWithoutFeedback,
 } from 'react-native';
 import { GS } from '../styles/global';
-import { FontAwesome5, MaterialIcons, Feather } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import BlockButton from '../components/BlockButton';
 import { createAlert } from '../fx';
 import User from '../classes/User';
+import FontText from '../components/FontText';
 
 export default class Login extends Component {
     constructor(props) {
@@ -21,6 +22,9 @@ export default class Login extends Component {
     }
 
     render() {
+        const height = Dimensions.get("window").height;
+        const width = Dimensions.get("window").width;
+
         return (
             <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() }>
                 <View style={ GS.signup }>
@@ -34,6 +38,21 @@ export default class Login extends Component {
                             backgroundColor: 'rgba(0,0,0,0)'
                         }}
                     >
+                        <View style={{
+                            marginTop: -height/8,
+                            marginBottom: 50,
+                        }}>
+                            <FontText
+                                style={{
+                                    color: 'white',
+                                    fontSize: 35,
+                                    fontStyle: 'underline',
+                                    }}
+                                font="DancingScriptRegular"
+                            >
+                            iTube Lite
+                            </FontText>
+                        </View>
                         <View style={ GS.inputGroupInput }>
                             <MaterialIcons 
                                 name="email"
@@ -78,8 +97,8 @@ export default class Login extends Component {
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-                            marginTop: 16,
-                            backgroundColor: 'rgba(0,0,0,0.67)',
+                            marginTop: 20,
+                            backgroundColor: 'rgba(0,0,0,0.27)',
                             paddingHorizontal: 10
                         }}>
                             <Text style={{ color: 'white', fontSize: 20 }}>Don't have an account?</Text>

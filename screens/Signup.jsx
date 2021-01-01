@@ -7,6 +7,7 @@ import {
 import { GS } from '../styles/global';
 import { FontAwesome5, MaterialIcons, Feather } from '@expo/vector-icons';
 import BlockButton from '../components/BlockButton';
+import FontText from '../components/FontText';
 
 import User from '../classes/User';
 
@@ -36,9 +37,24 @@ export default class Signup extends Component {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            backgroundColor: 'rgba(0,0,0,0)'
+                            backgroundColor: 'rgba(255,255,255,1)'
                         }}
                     >
+                        <View style={{
+                            marginTop: -height/10,
+                            marginBottom: 30,
+                        }}>
+                            <FontText
+                                style={{
+                                    color: 'white',
+                                    fontSize: 35,
+                                    fontStyle: 'underline',
+                                    }}
+                                font="DancingScriptRegular"
+                            >
+                            iTube Lite
+                            </FontText>
+                        </View>
                         <View style={ GS.inputGroupInput }>
                             <FontAwesome5 
                                 name="user"
@@ -91,10 +107,11 @@ export default class Signup extends Component {
                         </View>
                         <Text
                             style={{
-                                color: 'red',
+                                color: 'white',
                                 fontSize: 17,
                                 textAlign: 'right',
                                 width: width - 90,
+                                marginBottom: 10
                             }}
                         >
                         {/* this.charsLeft(this.state.password.length, 6) */}
@@ -122,11 +139,15 @@ export default class Signup extends Component {
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-                            marginTop: 16,
-                            backgroundColor: 'rgba(0,0,0,0.67)',
+                            marginTop: 20,
+                            backgroundColor: 'rgba(0,0,0,0.27)',
                             paddingHorizontal: 10
                         }}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>Already have an account?</Text>
+                            <Text
+                                style={{ color: 'white', fontSize: 20 }}
+                            >
+                                Already have an account?
+                            </Text>
                             <Button
                                 title="Sign In"
                                 onPress={ () => this.props.navigation.navigate("Login") }
